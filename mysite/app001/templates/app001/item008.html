@@ -24,8 +24,15 @@
     <td>{{ item.headerc }}</td>
     <td>{{ item.headerd|date:"Y-m-d" }}</td>
     <td>{{ item.headere|date:"Y-m-d H:i:s" }}</td>
-    <td>{{ item.headerf }}</td>
-
+    <td  style="
+        {% if item.headerf == "正常生产" %} color:green {% endif %}
+        {% if item.headerf == "设备故障" %} color:red   {% endif %}
+        {% if item.headerf == "外发大修" %} color:red   {% endif %}
+        {% if item.headerf == "无人操作" %} color:#cccc00   {% endif %}
+        {% if item.headerf == "无模具" %} color:#cccc00  {% endif %}
+        {% if item.headerf == "无订单" %} color:#cccc00   {% endif %}
+        "><b>{{ item.headerf }}</b>
+    </td>
 
 
     
